@@ -1,4 +1,3 @@
-# Incomplete
 """
 Algorithm 2
 -----삽입정렬-----
