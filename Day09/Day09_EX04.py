@@ -1,8 +1,9 @@
 """ <Algorithm>
-input: [2, 2, 3, 1, 3]  output: [2, 1, 1, 1]
-input: [7, 8, 8, 9]  output: [1, 2, 1]
-input: [3, 3, 4, 5, 6, 3, 7]  output: [2, 1, 1, 1, 1, 1]
-input: [2, 6, 6, 6, 3]  output: [1, 3, 1]
+input: [2, 2, 3, 1, 3]          output: [2, 1, 1, 1]
+input: [7, 8, 8, 9]             output: [1, 2, 1]
+input: [3, 3, 4, 5, 6, 3, 7]    output: [2, 1, 1, 1, 1, 1]
+input: [2, 6, 6, 6, 3]          output: [1, 3, 1]
+input: [4, 2, 2, 2]             output: [1, 3]
 """
 
 
