@@ -16,11 +16,15 @@ What is 'Tree'?
 
 class Tree:
     def __init__(self):
+        self.cursor = 1
         self.size = 8
         self.t = [None] * self.size
 
     def show_parent(self, position):
-        if position // 2 >= 1:
+        if position == 1:
+            print("Root Node")
+        # position이 트리 범위 안에 들어오는지
+        elif position // 2 >= 1:
             print(self.t[position // 2])
         else:
             print("out of range")
@@ -37,10 +41,52 @@ class Tree:
         else:
             print("out of range")
 
-t = Tree()
-t.show_parent(3)
-t.show_right_child(3)
+    def add(self, item):
+        if not self.isFull():      # self.isFull() == False / 다른 언어: if !self.isFull()
+            self.t[self.cursor] = item
+            self.cursor = self.cursor + 1
+
+    def delete(self):
+        if not self.isEmpty():
+            self.t[self.cursor - 1] = [None]
+            self.cursor = self.cursor - 1
+
+    def isEmpty(self):
+        if self.cursor == 1:
+            return True
+        else:
+            return False
+
+    def isFull(self):
+        if self.cursor == self.size:
+            return True
+        else:
+            return False
+
+    def display(self):
+        index = 1
+        while index <= self.cursor - 1:
+            print(self.t[index], end = " ")
+            index += 1
+        print()
 
 
 
+tree = Tree()
+tree.add('a')
+tree.add('b')
+tree.add('c')
+tree.add('d')
+tree.add('e')
+tree.add('f')
+tree.add('g')
+tree.display()
 
+tree.show_parent(3)         # 'a'
+tree.show_right_child(2)    # 'e'
+tree.show_left_child(2)     # 'd'
+
+tree.delete()
+tree.delete()
+
+tree.display()
