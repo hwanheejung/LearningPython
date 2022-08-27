@@ -16,6 +16,7 @@ What is 'Heap'?
 - X의 부모: X // 2
 
 """
+
 class Heap():
     def __init__(self):
         self.cursor = 1
@@ -42,13 +43,13 @@ class Heap():
 
             for c in range(self.cursor - 1, 1, -1):
                 if c // 2 >= 1 and self.heap[c//2] < self.heap[c]:      # if 부모가 있고 and 부모<자식:
-                    self.heap[c//2], self.heap[c] = self.heap[c], self.heap[c//2]   # change
+                    self.heap[c//2], self.heap[c] = self.heap[c], self.heap[c//2]   # swap
                 else:
                     continue
 
     def delete(self):
         if not self.isEmpty():
-            # root node와 끝노드 change
+            # root node와 끝노드 swap
             if self.cursor == 2:
                 del self.heap[1]
             else:
@@ -77,12 +78,16 @@ class Heap():
                 else:
                     continue
 
-
-
+    def display(self):
+        index = 1
+        while index <= self.cursor - 1:
+            print(self.heap[index], end=" ")
+            index += 1
+        print()
 
 
 heap = Heap()
-heap.add(5) 
+heap.add(5)
 heap.add(1)
 heap.add(7)
 heap.add(8)
@@ -92,6 +97,6 @@ heap.add(11)
 heap.delete()
 heap.delete()
 
+heap.display()
 
-print(heap.heap)
 
