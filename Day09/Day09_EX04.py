@@ -6,32 +6,24 @@ input: [2, 6, 6, 6, 3]          output: [1, 3, 1]
 input: [4, 2, 2, 2]             output: [1, 3]
 """
 
+arr = [4, 2, 2, 2, 2]
+result = []
 
-input = [4, 2, 2, 2]
-output = []
+idx = 0
 
-index = 0
-num = 1
-while index < len(input) - 1:
-    if input[index] != input[index + 1]:
-        output.append(1)
-        index += 1
-
-    else:
-        n = 1
-        while n < len(input) - index - 1:
-            if input[index] == input[index + n]:
-                num += 1
-            else:
-                break
+while idx < len(arr) - 1:
+    num = 1     # 비교해야할 개수
+    n = 1       # 같은거
+    while num <= len(arr) - idx - 1:
+        if arr[idx] == arr[idx + num]:
             n += 1
-        output.append(num)
-        index += num
+        else:
+            break
+        num += 1
+    result.append(n)
+    idx += n
 
-if input[-1] != input[-2]:
-    output.append(1)
-else:
-    output[-1] += 1
+if arr[-2] != arr[-1]:
+    result.append(1)
 
-print(output)
-
+print(result)
