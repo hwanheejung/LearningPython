@@ -14,7 +14,7 @@ int: add
 class Heap():
     def __init__(self):
         self.cursor = 1
-        self.size = int(input("size: "))
+        self.size = int(input())
         self.heap = [None] * self.size
 
 
