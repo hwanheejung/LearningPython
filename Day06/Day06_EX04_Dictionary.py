@@ -16,7 +16,7 @@ print(number["one"])
 number["three"] = 33
 print(number)
 
-for key in number.keys():       # ["one", "two", "three]
+for key in number.keys():       # ["one", "two", "three"]
     print(key)
 
 for value in number.values():   # [1, 2, 33]
